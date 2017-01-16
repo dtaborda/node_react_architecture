@@ -1,0 +1,54 @@
+@import '~assets/stylesheets/sass/variables';
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  border-top: 1px solid $gray-xl;
+  border-left: 1px solid $gray-xl;
+}
+
+.tableRow {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 0;
+  flex-wrap: wrap;
+  width: 100%;
+  border-bottom: 1px solid $gray-xl;
+  border-collapse: collapse;
+}
+
+.firstNameCell, .lastNameCell, .initialsCell {
+  flex: 2;
+}
+
+.officeCell, .editCell {
+  flex: 1;
+}
+
+.emptyEmployee {
+  flex-basis: 100%;
+  font-weight: bold;
+}
+
+.cell {
+  display: flex;
+  align-items: center;
+  height: 38px;
+  border-right: 1px solid $gray-xl;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 5px 10px;
+}
+
+.header {
+  background-color: $gray-xs;
+  font-weight: bold;
+  box-shadow: inset 2px 2px 28px -12px rgba(0,0,0,1);
+}
+
+.editBtn {
+  width: 100%;
+}

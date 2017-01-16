@@ -1,0 +1,44 @@
+@import '~assets/stylesheets/sass/variables';
+
+.bodyWithOpenModal {
+  overflow: hidden;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 999;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 800px;
+  margin: 50px auto;
+  background-color: $white;
+  border-radius: 6px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: $white;
+  color: $primary-xl;
+  align-items: center;
+  height: 45px;
+  border-bottom: 1px solid $gray-default;
+  border-radius: 6px 6px 0 0;
+  padding: $size-xxxl $size-xl;
+}
+
+.closeModal {
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
+}

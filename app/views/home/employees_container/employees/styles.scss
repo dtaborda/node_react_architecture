@@ -1,0 +1,45 @@
+@import '~assets/stylesheets/sass/variables';
+
+.wrapButton, .wrapNewEmployeeFooterButton {
+  display: flex;
+  flex-direction: row;
+  background-color: $white;
+  color: $white;
+  padding: $size-xxl $size-xl;
+  border-top: 1px solid $gray-default;
+  border-radius: 0 0 6px 6px;
+}
+
+.wrapButton {
+  justify-content: space-between;
+}
+
+.wrapNewEmployeeFooterButton {
+  justify-content: flex-end;;
+}
+
+.wrapButtonCancelSave {
+  display: flex;
+  justify-content: space-around;
+  flex-basis: 25%;
+}
+
+.content {
+  margin: 10px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  background-color: #d7f5f7;
+}
+
+.title {
+  color: #077f8c;
+}
+
+.submitBtn {
+  margin-left: $size-default;
+}
