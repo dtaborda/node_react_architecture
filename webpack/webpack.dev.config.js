@@ -1,7 +1,7 @@
-const webpack = require('webpack');
-const WebpackNotifierPlugin = require('webpack-notifier');
-const path = require('path');
-const HappyPack = require('happypack');
+import webpack from 'webpack';
+import WebpackNotifierPlugin from 'webpack-notifier';
+import path from 'path';
+import HappyPack from 'happypack';
 
 function isExternal(module) {
   const userRequest = module.userRequest;
@@ -32,6 +32,7 @@ module.exports = {
     publicPath: '/'
   },
   plugins: [
+    require('autoprefixer'),
     new HappyPack({
       // loaders is the only required parameter:
       loaders: ['babel']
@@ -68,7 +69,8 @@ module.exports = {
       { test: /\.jsx?$/, exclude: /node_modules/, loaders: ['happypack/loader'] },
 
       { test: /\.json$/, loader: 'json-loader' },
-      { test: /\.css$/,  loader: 'style-loader!css-loader?modules' },
+      { test: /\.css$/, loader: 'style-loader!css-loader!postcss-loader' },
+      { test: /\.css$/, loader: 'style-loader!css-loader?modules' },
       { test: /\.scss$/, loader: 'style-loader!css-loader?modules!sass-loader' },
       { test: /\.png/, loader: 'file-loader?mimetype=image/png' },
       { test: /\.jpg/, loader: 'file' },

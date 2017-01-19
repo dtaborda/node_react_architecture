@@ -7,6 +7,7 @@ const webpackHotMiddleware = require('webpack-hot-middleware');
 const webpackConfig = require('../webpack/webpack.dev.config.js');
 import { readFileSync } from 'jsonfile';
 import expressReactViews from 'express-react-views';
+import compression from 'compression';
 
 import bodyParser from 'body-parser';
 import api from '../backend/api';
@@ -80,8 +81,11 @@ if (isDeveloping) {
   const assetsManifest = readFileSync(assetsManifestPath);
 
   // Load assets to be rendered
-  assets.scripts.push(assetsManifest.main.js);
-  assets.styleLinks.push(assetsManifest.main.css);
+  assets.scripts.push(assetsManifest.vendor.js);
+  assets.scripts.push(assetsManifest.app.js);
+  assets.styleLinks.push(assetsManifest.app.css);
+
+  app.use(compression());
 
   // Add to express static content
   app.use(express.static(path.resolve(__dirname, '../webpack/dist')));

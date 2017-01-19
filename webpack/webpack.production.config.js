@@ -7,11 +7,13 @@ const AssetsPlugin = require('assets-webpack-plugin');
 const ROOT = path.resolve(__dirname, '..');
 
 module.exports = {
-  devtool: 'eval-source-map',
   context: path.resolve(__dirname, '..'),
-  entry: [
-    path.join(__dirname, '../app/index.jsx')
-  ],
+  entry: {
+    app: [
+      path.join(__dirname, '../app/index.jsx')
+    ],
+    vendor: path.join(__dirname, '../app/vendors/index.js')
+  },
   output: {
     path: path.join(__dirname, '/dist/'),
     filename: '[name]-[hash].min.js',
@@ -50,6 +52,11 @@ module.exports = {
     }
   },
   plugins: [
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
+    }),
     new AssetsPlugin({
       path: path.join(__dirname, 'config'),
       filename: 'webpack-prod-assets-manifest.json'

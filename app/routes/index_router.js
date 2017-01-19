@@ -6,7 +6,6 @@ import {
   browserHistory
 } from 'react-router';
 import ApplicationContainer from 'views/application/application_container';
-import AboutContainer from 'views/about/about_container';
 import EmployeesContainer from 'views/home/employees_container';
 
 if (module.hot) {
@@ -17,10 +16,9 @@ if (module.hot) {
 export default function renderRoutes(store) {
   return (
     <Router history={browserHistory}>
-      <Redirect from="/" to="/home" />
+      <Redirect from="/" to="/employees" />
       <Route path='/' component={ApplicationContainer}>
-        <Route path='/home' component={EmployeesContainer} />
-        <Route path='/about' component={AboutContainer} />
+        <Route path='/employees' component={EmployeesContainer} />
       </Route>
     </Router>
   );

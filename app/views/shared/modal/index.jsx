@@ -39,7 +39,6 @@ export default class Modal extends Component {
       children,
       isOpen
     } = this.props;
-    console.log('isOpen', isOpen);
     if (isOpen) {
       addClassName(document.body, styles.bodyWithOpenModal);
       return (

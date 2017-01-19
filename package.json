@@ -37,8 +37,9 @@
   "author": "Damian Taborda",
   "license": "",
   "dependencies": {
+    "autoprefixer": "^6.6.1",
     "classnames": "^2.2.5",
-    "compression": "^1.6.1",
+    "compression": "^1.6.2",
     "cookie": "0.3.1",
     "debug": "^2.2.0",
     "dom-helpers": "^2.4.0",
@@ -100,6 +101,7 @@
     "node-sass": "^3.7.0",
     "nodemon": "^1.9.1",
     "null-loader": "0.1.1",
+    "postcss-loader": "^1.2.2",
     "react-hot-loader": "^3.0.0-beta.5",
     "react-transform-catch-errors": "1.0.1",
     "react-transform-hmr": "1.0.1",
